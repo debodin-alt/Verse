@@ -1,0 +1,12 @@
+{
+  "name": "verse-songbook",
+  "version": "0.2.0",
+  "private": true,
+  "description": "A personal, phone-friendly songwriting notebook",
+  "scripts": {
+    "dev": "node scripts/serve.cjs",
+    "test": "node test-core.cjs && node tests/recording.cjs",
+    "check": "node --check dist/app.js && npm test"
+  },
+  "engines": {"node": ">=20"}
+}
