@@ -9,3 +9,5 @@
 - Devices: iPhone/iOS, Mac and AirPods/Bluetooth/other wireless headphones. Exact phone/OS unknown. Audio routing on a real iPhone is unverified.
 
 Interview evidence: Daniel's first-round answers in this session, 2026-11-06. This file supersedes the initial personal-only hypothesis with an explicit commercial destination. It does not commit to a subscription or declare a release specification.
+
+Round 2, 2026-11-07: offline capture required; no locked-phone recording, leaning against recording across app switches; stop/save is reasonable. No restorable lyric-history feature. Daniel delegates the v1 backup/sync recommendation, prefers a very cheap annual price and little to no maintenance. No exact price, backend, recurring-cost ceiling or service/account authorisation is established. Proposed private-validation and public-paid gates are in `spec/verse-release-proposal.md`; round-3 export/sharing/platform answers and scope agreement remain pending.

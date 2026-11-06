@@ -58,6 +58,8 @@ Tier 3 behavioral evaluations were not run: those launch headless Claude agents 
 | Denial/interruption/storage failure | Mock final-save failure only | Pending | Pending |
 | Full backup/restore | Synthetic audio validator only | Dialog opens; download/restore pending | Pending |
 
+This initial journey matrix is superseded by the [2026-11-07 assessment](2026-11-07.md) for the new isolated Chrome evidence; physical iPhone checks remain pending.
+
 For the first device check, use a disposable idea after exporting existing work: play a default loop, record 10 seconds using normal headphones, stop and wait for saved banner, replay, close/reopen and replay again. Record phone/iOS, route, level before/during capture, missing beginnings and playback result. Repeat speaker/Bluetooth only for routes Daniel uses. Do not clear storage. Interruptions and restore tests follow once a verified backup exists.
 
 ## Round-1 follow-up
@@ -65,3 +67,11 @@ For the first device check, use a disposable idea after exporting existing work:
 Read founder-board's full skill and lenses. Wrote `founder/idea.md`, standalone `founder/board/brief.md`, and launched three general subagents through the session's collaboration tool, one per lens as required by the skill. These were session subagents, not Orca worker dispatches or a literal slash-command execution. Each wrote its own memo; the lead read all three and compiled `founder/board.md`, preserving score differences and every condition. Result: 3 FUND IF; 5.3/10 average. This is qualitative advice, not investability, customer evidence or a profitability test.
 
 Recorded round-1 answers in `docs/discovery/interview.md` and commercial/platform options in `docs/discovery/commercial-architecture-options.md`. No app implementation or schema changes made. The earlier evaluation results remain unchanged; no claim of rerunning skill evaluations or app tests on a documentation-only change.
+
+## Round-2 follow-up — 2026-11-07
+
+Recorded offline capture, stop/save on background/lock, no lyric history, cheap annual preference and minimal maintenance. Drafted release proposal, proposed ADR, logical data/migration model, backlog, test matrix and delivery/recovery runbook. These are reviewable proposals, not accepted scope or implementation.
+
+The installed `/founder-competitors` procedure produced a six-alternative public-source assessment and CSV, with deduplicated but thin complaint evidence and explicit gaps. Currency/offer ambiguities prevent a valid comparable annual price range; no market gap is claimed. Read `/founder-pricing` and `/founder-cfo`: provisional advice is documented, but no Van Westendorp curve or CFO scenario ran because buyer/usage/cost inputs are missing. No invented panel data, margin or profitability result.
+
+Re-ran `npm run check` (pass), and syntax-checked the investigation harness. Ran the new isolated Chrome probe after correcting harness-only load/hash/cleanup issues: six positive lifecycle/data checks and one successful data-loss reproduction; two defects observed. No app source was edited. The final artifact records exact source hash, native-recorder synthetic-audio evidence and console output. Optional fonts are blocked; physical iPhone, real quota exhaustion/crash and Lighthouse remain uncovered. See the dated assessment for limits.

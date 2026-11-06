@@ -1,0 +1,127 @@
+{
+  "baseline": "c6fb551",
+  "appSha256": "9b16cee6e070991b5ac4a6181ec144f972c83679d881396478fd597abf60c465",
+  "browser": "156.0.8078.80",
+  "syntheticAudio": true,
+  "checks": [
+    {
+      "name": "Capture text, save and reopen",
+      "status": "pass",
+      "evidence": "Exact title/lyric persisted in real IndexedDB across reload."
+    },
+    {
+      "name": "Native MediaRecorder with synthetic microphone, running loop, save and replay after reopen",
+      "status": "pass",
+      "evidence": {
+        "bytes": 38554,
+        "sha256": "47724f2fc0c4b3143019b6c20e3ab7ccd44b8bc2c715a62050cb87cb305c69ed",
+        "limit": "Synthetic Chromium microphone; no physical device/audio routing or audible quality evidence."
+      }
+    },
+    {
+      "name": "Full downloaded backup restores real recording bytes additively",
+      "status": "pass",
+      "evidence": "Two imported copies plus existing sample; audio SHA-256 preserved across restore and reload. Idea chronology is a separate observed defect."
+    },
+    {
+      "name": "Additive v1→v2 database migration preserves legacy text/audio",
+      "status": "pass",
+      "evidence": "Real IndexedDB upgrade preserved fixture identity/text/bytes and added sessions; fixture audio is arbitrary bytes, not playable media."
+    },
+    {
+      "name": "Denied microphone leaves a usable notebook",
+      "status": "pass",
+      "evidence": "Chromium context without a microphone grant rejected capture; editing and saving remained available."
+    },
+    {
+      "name": "Final-save storage fault retains audio and recovery checkpoint",
+      "status": "pass",
+      "evidence": "Injected persistence failure, not an actual full disk; audio stayed in memory and journal recovered exactly once on reload."
+    },
+    {
+      "name": "Concurrent-tab risk reproduction",
+      "status": "pass",
+      "evidence": "Reproduced data-loss defect; a successful reproduction is not a product-quality pass."
+    }
+  ],
+  "observations": [
+    {
+      "name": "Restore resets idea creation timestamp",
+      "changed": true
+    },
+    {
+      "name": "Stale tab overwrites newer lyric",
+      "reproduced": true
+    }
+  ],
+  "uncaughtPageErrors": [],
+  "consoleMessages": [
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED"
+    }
+  ],
+  "blockedOptionalRequests": [
+    "fonts.googleapis.com",
+    "fonts.googleapis.com",
+    "fonts.googleapis.com",
+    "fonts.googleapis.com",
+    "fonts.googleapis.com",
+    "fonts.googleapis.com",
+    "fonts.googleapis.com",
+    "fonts.googleapis.com",
+    "fonts.googleapis.com",
+    "fonts.googleapis.com",
+    "fonts.googleapis.com",
+    "fonts.googleapis.com",
+    "fonts.googleapis.com"
+  ]
+}

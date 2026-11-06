@@ -2,6 +2,8 @@
 
 Status: source discovery only, not a completed `/founder-competitors` evaluation. No market gap, customer dissatisfaction, rating or willingness-to-pay finding is established.
 
+Follow-up: see [competitors.md](competitors.md) and [competitors.csv](competitors.csv) for the subsequent six-alternative pass, including thin review evidence and pricing ambiguities. This file retains the initial source-discovery record.
+
 | Source | Observed overlap | What remains to test |
 |---|---|---|
 | [Songcraft](https://songcraft.io/) and [pricing](https://songcraft.io/pricing) | Vendor describes lyrics/chords, recordings, a browser library, collaboration and a limited free tier with a paid Pro tier | Compare quick capture, return-to-development and separate voice/backing against Verse. Vendor claims are not independent usability evidence |

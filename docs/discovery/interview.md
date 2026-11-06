@@ -11,13 +11,17 @@ Confirmed by Daniel:
 - Separate voice/backing capability is desired, with save/export of a mix. This is a capability goal, not approval of a multitrack editor or specific recording engine.
 - Commercial destination is now explicit: a full app for sale across Apple/web/Android, with payment/customer handling. V1 may omit monetisation, but avoid architecture that blocks commercialisation. Stripe is a candidate, not a mandate for every platform.
 
-## Round 2 — pending
+## Round 2 — 2026-11-07
 
-1. Offline capture and lock/app-switch recording requirements.
-2. Automatic backup versus cross-device sync versus manual backup for private v1.
-3. Named takes and mutable lyrics versus restorable lyric history.
-4. Pricing preference or research-led model hypothesis.
-5. Monthly budget and maintenance tolerance before revenue.
+- Capture should work without internet. Do not record while the phone is locked. Daniel leans against recording while switching apps; safely stop and save is reasonable. Working v1 requirement: stop/save on background; confirm behaviour in the scope checkpoint and real-device tests.
+- Daniel delegates the v1 backup/sync recommendation. Recommendation under review: private validation release with verified manual backup; automatic managed backup and cross-device sync before a public paid launch. This staged recommendation is not an accepted backend/account decision.
+- Restorable lyric history is not wanted. Keep editable lyrics and multiple named takes; internal revision checks for concurrency/migration safety are implementation details, not a version-history feature.
+- A very cheap annual price is preferred; Daniel requests evidence-led advice. Price, cloud storage allowance and payment model are not final.
+- Little to no ongoing maintenance is preferred. No recurring-cost ceiling has been specified. Recommend managed services and a small product surface; do not promise zero maintenance or silently authorise spend.
+
+## Round 3 — pending
+
+Exports (text/mix/stems versus MIDI/DAW project), private file sharing versus links/collaboration, and platform rollout order. No new services or public exposure authorised.
 
 ## Remaining interview topics
 
