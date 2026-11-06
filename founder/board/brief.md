@@ -1,0 +1,15 @@
+# Verse — standalone founder board brief
+
+Read `../idea.md` resolved from this directory, and apply only your assigned lens from `/Users/danielbodin/.claude/skills/founder-board/lenses.md`.
+
+Daniel asks for a full SDLC review of an existing app, not a speculative new build. He likes most of its current experience and wants to productionise it for Apple, web and Android, eventually selling it and handling customers. An initial version without payments is acceptable; the architecture must support a marketable product later.
+
+His usual creative trigger is a lyric, verse, topic or loose idea; sometimes a melody. Apple Notes mixes songwriting with unrelated notes. Opening GarageBand or Ableton Live feels too complicated for brainstorming. He wants a dedicated, quickly accessible catalogue/dashboard and a place to return and develop ideas. Both quick capture and backing-first freestyle matter. He wants separate voice/backing capability with a saved/exported mix. Devices include iPhone, Mac and wireless/Bluetooth headphones.
+
+Repository evidence (baseline c6fb551, package 0.2.0): plain HTML/CSS/JS, Web Audio synthesized chords/drums, MediaRecorder, local IndexedDB. Songs/poems/fragments, lyrics/scratchpad/tags/stars/archive, loop presets, mixed microphone/backing takes, JSON backup/restore and downloads exist. No cloud sync, guaranteed offline startup, background capture or separate stems. A hosted instance is owner-only; GitHub source is public. Existing automated syntax/core and mocked recording tests pass. One local browser text capture survives refresh; loop scheduling starts/stops. These do not establish reliable real microphone recording, iPhone routing, crash recovery, migrations, backup round-trips, latency or mix quality.
+
+Data protection is non-negotiable: never clear user storage. App and GitHub deployments are separate; hosted-source byte parity is not established. No paid services, account requirements, external AI, analytics or public exposure may be silently introduced.
+
+Unknown: target buyer segment beyond the founder, price/model, market size, acquisition, retention, operational costs, launch geography and platform rollout, backup/sync requirements, offline/background needs, detailed versioning/export scope. These are open interview/research questions. Assess the business conditionally; do not manufacture economics or treat a qualitative vote as demand validation. No willingness-to-pay, customer panel, competitor research or financial model has been completed. The pending interview asks pricing preference and operating budget; this board does not settle either.
+
+Write only your assigned memo in this directory, with Score 1–10, Vote FUND / FUND IF / PASS, strengths, top three killing risks, founder questions and conditions. Apply a published-framework lens, never impersonate or claim an endorsement from its author. Do not edit source, STATUS, other memos or the release scope. No service/account/publishing actions. This is an advisory review; Daniel retains the scope/architecture decision.

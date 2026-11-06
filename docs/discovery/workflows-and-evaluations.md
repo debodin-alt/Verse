@@ -14,12 +14,12 @@ Sources read:
 - Chrome DevTools plugin 1.11.0 a11y-debugging; Sites skill/local preview guide for existing-host inspection.
 - Agent Skills evaluation README and runner; upstream AGENTS.md explicitly scopes itself to that skill repository, not Verse.
 
-Available persona files in Agent Skills: code-reviewer, security-auditor, test-engineer and web-performance-auditor. Discovery does not mean these agents executed. Founder-board requires three lens agents after a standalone brief; it has not convened yet.
+Available persona files in Agent Skills: code-reviewer, security-auditor, test-engineer and web-performance-auditor. Discovery does not mean these agents executed. Founder-board subsequently convened three separate subagents using the installed workflow and a standalone brief; see the round-1 follow-up below.
 
 ## Selected workflow
 
 - `/spec` interview is in progress. Wait for consequential answers; no implementation code in this stage.
-- `/founder-board` step 0 is pending clarification of commercial intent/price (including an explicit decision that nothing is sold). Do not manufacture a business. Then write founder/idea.md and standalone board brief, apply the three published-framework lenses with separate agents, preserve disagreements and conditions.
+- `/founder-board` initial intake was pending commercial clarification. Daniel subsequently confirmed a paid-product destination, explicitly allowing v1 without payments. Future price/model is intentionally open and was asked about in round 2; no economic assumptions were supplied to the board. The board reviewed conditionally with those unknowns recorded.
 - `/founder-competitors` follows the target-user answers and idea file; use public linked sources. Not run yet.
 - Consumer simulation is optional and cannot substitute for Daniel's real use or real interviews; do not invent a target buyer distribution or paid pitch. Pricing/CFO/plan only when relevant. No founder verdict or market validation claimed.
 - After scope agreement: `/build` implements accepted criteria in small slices, `/review` proves each criterion and logs gaps. Global convention requires file-trail PR merge before build worktrees and Daniel approval before merge/deploy.
@@ -59,3 +59,9 @@ Tier 3 behavioral evaluations were not run: those launch headless Claude agents 
 | Full backup/restore | Synthetic audio validator only | Dialog opens; download/restore pending | Pending |
 
 For the first device check, use a disposable idea after exporting existing work: play a default loop, record 10 seconds using normal headphones, stop and wait for saved banner, replay, close/reopen and replay again. Record phone/iOS, route, level before/during capture, missing beginnings and playback result. Repeat speaker/Bluetooth only for routes Daniel uses. Do not clear storage. Interruptions and restore tests follow once a verified backup exists.
+
+## Round-1 follow-up
+
+Read founder-board's full skill and lenses. Wrote `founder/idea.md`, standalone `founder/board/brief.md`, and launched three general subagents through the session's collaboration tool, one per lens as required by the skill. These were session subagents, not Orca worker dispatches or a literal slash-command execution. Each wrote its own memo; the lead read all three and compiled `founder/board.md`, preserving score differences and every condition. Result: 3 FUND IF; 5.3/10 average. This is qualitative advice, not investability, customer evidence or a profitability test.
+
+Recorded round-1 answers in `docs/discovery/interview.md` and commercial/platform options in `docs/discovery/commercial-architecture-options.md`. No app implementation or schema changes made. The earlier evaluation results remain unchanged; no claim of rerunning skill evaluations or app tests on a documentation-only change.
