@@ -1,12 +1,12 @@
 # ADR 0001: Preserve Verse and stage commercial readiness
 
-Status: PROPOSED; 2026-11-07. Requires scope agreement. Supersedes no accepted architecture decision.
+Status: ACCEPTED by Daniel on 2026-11-07 with release proposal v0.3 and planning PR #1. Native build/device evidence and service/cost decisions remain gates; no dependency or service is implied to be installed.
 
 ## Context
 
 Daniel likes the current build, prioritises immediate words/melody capture and wants an eventually commercial product with a private first release. Latest round-3 answers confirm separate voice/backing exports, private sharing by exported files and all three platforms launching together, superseding the mixed-only local draft. Offline capture and foreground-only stop/save were answered in round 2. Existing JS/Web Audio/IndexedDB remains a useful baseline; native audio/device evidence is still limited.
 
-## Proposed decision
+## Decision
 
 Improve incrementally. Keep the product/UI and buildless web app initially. Separate persistence, recording state and mix/export logic into understandable modules when a concrete change requires it, backed by tests. Do not replace the UI framework for commercial branding alone.
 

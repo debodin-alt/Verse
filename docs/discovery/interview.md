@@ -35,6 +35,10 @@ The current intake also asks for exact iPhone/iOS/headphone routes and confirmat
 - These answers supersede the earlier local draft's mixed-only first-release assumption and any proposed Android-later launch. Offline/stop-save preferences from round 2 remain answered; exact hardware details are device-test inputs, not unresolved product direction.
 - This completes the focused product interview. The concrete v0.3 scope and proposed architecture await a single checkpoint agreement before major implementation. No new services/accounts/spend/public exposure authorised by these answers.
 
+## Checkpoint approval — 2026-11-07
+
+Daniel answered “yes” to approval of the concrete v0.3 scope/shared-web/Capacitor architecture and merging planning PR #1 so implementation can start with data-protection fixes. Record the accepted file trail on main before creating build worktrees. This does not approve deployments, paid service/account activation or future implementation PR merges.
+
 ## Remaining interview topics
 
 Implementation/release inputs: actual target phone/OS/headphone details, signing/build-host access, cost ceiling and provider choice before cloud/billing activation. Defaults in the checkpoint are private user-owned content, no external AI/analytics, no public creative catalogue and no paid feature that deletes work on expiry. These remain visible in the proposed plan, not silently introduced services.

@@ -1,6 +1,6 @@
 # Verse release proposal v0.3 — 2026-11-07
 
-Status: concrete scope/architecture checkpoint, awaiting agreement. Round 3 confirms text, mixed-audio and separate voice/backing exports; private file-based sharing; and a coordinated iOS, web and Android launch. These latest answers supersede an earlier local draft's mixed-only scope. Physical device details and build/signing setup remain to verify; they do not reopen the answered product questions.
+Status: APPROVED by Daniel on 2026-11-07, including the shared-web/Capacitor architecture and merge of planning PR #1. Round 3 confirms text, mixed-audio and separate voice/backing exports; private file-based sharing; and a coordinated iOS, web and Android launch. Physical device details and build/signing setup remain release prerequisites. Approval starts implementation; it does not authorise deployments, paid services or later code merges without their review.
 
 ## Product brief
 
@@ -15,7 +15,7 @@ Target journeys:
 4. Leave the foreground/lock the phone during capture: stop, preserve available audio and explain the saved/recovered state on return. Do not advertise background recording.
 5. Export a complete backup and restore it alongside existing work; failures preserve the original catalogue.
 
-## Two release gates (recommended, not yet agreed)
+## Approved release gates
 
 **MVP / private validation release:** preserve the current UI and catalogue; offline startup/capture, foreground stop/save, separate voice/backing for new takes, mixed playback/export, text export, data-loss fixes, tested backups/migration/recovery and usable iOS/web/Android previews. Existing mixed takes stay playable/exportable as mixed audio; do not promise isolated voice from old mixes. Sharing uses exported files only. No payments or new Verse account required for local creation. Preserve existing hosted access. Manual off-device backups remain necessary and visible. Internal increments may be tested separately; do not declare or launch the first release while a platform remains unvalidated.
 
@@ -40,7 +40,7 @@ R10. iOS, web and Android are equal first-release targets. Native packages, migr
 
 No DAW timeline, destructive waveform editing, production multitrack suite, tab editor, AI writing/transcription, lyric-version UI, background recording, MIDI/DAW project export, collaboration/public links, native desktop app or unlimited hosted audio promise in the first release. Separate voice/backing audio files are included; sophisticated production editing is excluded. Richer instruments and future integrations remain later opportunities.
 
-## Draft MVP acceptance criteria
+## MVP acceptance criteria
 
 - [ ] AC01: existing version-1 and version-2 fixture libraries retain idea IDs, text, settings, timestamps and audio hashes after upgrade; all legacy mixed takes remain playable where their codecs are supported.
 - [ ] AC02: after one online installation, airplane-mode reopen displays the catalogue and permits new text/voice capture, local save and subsequent reopen. First-time offline entry gives a useful explanation.

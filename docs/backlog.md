@@ -1,6 +1,6 @@
 # Prioritised backlog — proposal v0.3
 
-Status: proposed; acceptance references [release proposal](../spec/verse-release-proposal.md). Start implementation only after the scope/architecture and file-trail review gates. One small reviewed vertical slice at a time.
+Status: scope/architecture approved by Daniel on 2026-11-07; acceptance references [release proposal](../spec/verse-release-proposal.md). Start build worktrees after the approved planning PR merges. One small reviewed vertical slice at a time.
 
 | ID / priority | Increment | Acceptance / evidence |
 |---|---|---|
