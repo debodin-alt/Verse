@@ -4,15 +4,17 @@ Status: PROPOSED; 2026-11-07. Requires scope agreement. Supersedes no accepted a
 
 ## Context
 
-Daniel likes the current build, wants offline use and foreground-only stop/save, separate voice/backing and mixed exports, and an eventually paid Apple/web/Android app with low maintenance. Existing plain JS/Web Audio/IndexedDB is a useful baseline but lacks separate stems, offline shell and commercial services. No real iPhone proof establishes a need for a complete rewrite.
+Daniel likes the current build, prioritises immediate words/melody capture and wants an eventually commercial product with a private first release. Latest round-3 answers confirm separate voice/backing exports, private sharing by exported files and all three platforms launching together, superseding the mixed-only local draft. Offline capture and foreground-only stop/save were answered in round 2. Existing JS/Web Audio/IndexedDB remains a useful baseline; native audio/device evidence is still limited.
 
 ## Proposed decision
 
 Improve incrementally. Keep the product/UI and buildless web app initially. Separate persistence, recording state and mix/export logic into understandable modules when a concrete change requires it, backed by tests. Do not replace the UI framework for commercial branding alone.
 
-Use local storage as the first save destination; version the offline app shell and data separately. Preserve old data and legacy mixed takes. Introduce immutable stem assets and per-take backing/timing metadata through an additive tested migration; avoid rewriting existing audio.
+Use local storage as the first save destination; version the offline app shell and data separately. Preserve old data and mixed takes. New accompanied takes need immutable independent audio assets plus frozen backing/timing; introduce that through an additive migration with old-version preservation tests first. Do not rewrite or claim to unmix old audio.
 
-Validate the existing browser recording path against the accepted iPhone/wireless matrix. If it cannot meet the recording/mix criteria, choose a native capture component behind the same product interface. A Capacitor container is a candidate for store distribution and native capabilities; it is not selected or installed by this ADR. Keep the web path viable.
+Recommend **one shared web product/UI with Capacitor iOS/Android packages**, retaining the existing JS code incrementally. Keep recording, persistence and file export behind small explicit boundaries so native implementations can be used only where required. This is the proposed architecture to approve, not an installed dependency or a claim that wrapping solves audio. Validate browser and WebView recording against the actual iPhone/Android/wireless matrix; if it fails, prove a native capture component behind the same interface. Native integration must preserve the web product and old data.
+
+Build internal increments in a practical order, but gate the release on all three targets. Mac uses the web app. The current Mac cannot locally build the proposed current iOS toolchain, and Android setup is missing from checked locations. A suitable native build host/toolchain is a concrete prerequisite; no paid build service or system upgrade is authorised. See [build readiness](../discovery/native-build-readiness.md).
 
 For the commercial release, prefer a managed auth/database/object-storage service over operating a custom server. Choose it using costs, private audio access, offline conflict behaviour, export/restore support and the maintenance burden. Managed services still need security updates, backup checks, account/billing support and release maintenance.
 

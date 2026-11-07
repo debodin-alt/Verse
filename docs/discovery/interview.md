@@ -19,10 +19,22 @@ Confirmed by Daniel:
 - A very cheap annual price is preferred; Daniel requests evidence-led advice. Price, cloud storage allowance and payment model are not final.
 - Little to no ongoing maintenance is preferred. No recurring-cost ceiling has been specified. Recommend managed services and a small product surface; do not promise zero maintenance or silently authorise spend.
 
-## Round 3 — pending
+## Renewed intake — 2026-11-07
 
-Exports (text/mix/stems versus MIDI/DAW project), private file sharing versus links/collaboration, and platform rollout order. No new services or public exposure authorised.
+The current conversation reconfirms an eventual commercial product with a private first release. Daniel starts with lyrics and says he likes how the "ledger is first" in the current web version. Preserve that starting experience; do not rename or redesign it based on an assumed interpretation.
+
+The priority journey is **capture words or a melody immediately, then develop it later**. A **reliable mixed take is sufficient initially**, superseding the earlier separate-track requirement for the first release. Independent voice/backing remains a possible later capability, not a prerequisite for private validation. Scope and architecture are still proposals.
+
+The current intake also asks for exact iPhone/iOS/headphone routes and confirmation of the earlier offline/stop-and-save preferences; that answer is pending. No new services, accounts, spend or audience changes are authorised.
+
+## Round 3 — latest explicit answers, 2026-11-07
+
+- Daniel accepts text, mixed-audio and separate voice/backing file exports; MIDI/DAW project files are deferred.
+- Daniel accepts a private notebook with sharing through exported files; no links/collaboration required.
+- Daniel requires all three platforms to launch together. iOS and Android are release prerequisites alongside web; Mac uses web unless a separate native desktop app is requested later.
+- These answers supersede the earlier local draft's mixed-only first-release assumption and any proposed Android-later launch. Offline/stop-save preferences from round 2 remain answered; exact hardware details are device-test inputs, not unresolved product direction.
+- This completes the focused product interview. The concrete v0.3 scope and proposed architecture await a single checkpoint agreement before major implementation. No new services/accounts/spend/public exposure authorised by these answers.
 
 ## Remaining interview topics
 
-Exports (text, mixed audio, stems, DAW integration), private sharing versus collaboration/public publishing, privacy/ownership and operational access to creative content, initial launch platform order and testers. Do not settle these from assumptions.
+Implementation/release inputs: actual target phone/OS/headphone details, signing/build-host access, cost ceiling and provider choice before cloud/billing activation. Defaults in the checkpoint are private user-owned content, no external AI/analytics, no public creative catalogue and no paid feature that deletes work on expiry. These remain visible in the proposed plan, not silently introduced services.

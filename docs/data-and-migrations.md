@@ -2,7 +2,9 @@
 
 Status: draft; no schema changed. Existing `verse-notebook` IndexedDB v2 has `ideas` with embedded take Blobs and `sessions` with captured chunks. Backup envelope version 1 is independent of DB version.
 
-## Logical model for the next release
+## Logical model and later extensions
+
+Latest round-3 approval includes separate voice/backing exports, superseding the earlier mixed-only local draft. Preserve existing mixed assets. Backing revisions, independent audio assets and alignment metadata below are required logical capabilities for new accompanied takes; the physical schema/migration remains subject to the architecture checkpoint. Introduce only changes justified by those accepted export and integrity/recovery requirements.
 
 | Record | Content / invariants |
 |---|---|

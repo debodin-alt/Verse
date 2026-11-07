@@ -9,10 +9,13 @@ No release/deployment is authorised by this document. Existing Site identity/acc
 3. Run `npm run check` and increment-specific browser/data tests. Storage changes require old fixtures and preservation tests first. Record source commit, cache/app/data versions and compatibility. Pin release artifacts and keep the last known working artifact.
 4. Offer a preview and short real-device checks from the matrix. Review actual console and failures. Do not treat synthetic audio or an iOS simulator as physical proof.
 5. Export a full backup of existing device data and verify restoration using a separate disposable context. A downloaded file alone is not proof it restores. Explain any cross-origin/browser/native transfer; keep the original copy intact.
+6. Build and validate iOS and Android alongside web, including signatures/private distribution, permission strings, offline/native storage and audio/file-export paths. Use the [native setup evidence](discovery/native-build-readiness.md); do not claim native builds from checked-in configuration alone. All three are first-release gates. Preserve the existing live app until the replacement release is ready and explicitly deployed.
 
 ## Safe publish/update
 
 Package the tested source and record its commit. Deploy only after agreement using the host's supported version workflow. Preserve audience, origin, database and existing account access. Publish a minimal version notice with limitations and backup guidance.
+
+Hold coordinated launch until all three targets satisfy the same release definition. Mac uses web. Internal previews do not count as a staggered product launch. A public paid launch waits for both store approvals and the commercial gates; store review completion dates cannot be guaranteed. No public sharing links/collaboration are in scope; sharing is through exported files.
 
 For offline support, cache only intended static app assets, never login/error responses or customer records. Stage new assets separately and activate when recording and saves are idle. Do not force-reload during capture. Maintain a working offline shell and test it with the current data version before removing old caches. Exact deployment/cache implementation awaits scope and hosting decisions.
 
