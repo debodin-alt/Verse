@@ -1,0 +1,13 @@
+# Verse
+
+- What it is: a dedicated songwriting and poetry notebook between a general notes app and a production DAW, retaining words, melodies, simple backing and takes in an accessible catalogue.
+- Who it is for: initially Daniel, who usually captures lyrics, verses, topics and loose ideas, sometimes a tune; the prospective customer is a songwriter with the same capture-to-development problem. Wider customer demand is unvalidated.
+- What it sells, at what price: intended to become a full paid app; Daniel permits v1 without payments. Future price and purchase model are explicitly undecided and the next interview asks for a preference or permission to recommend a hypothesis. No revenue, conversion or profitability assumptions are established.
+- Where and how: iPhone/iOS, Mac/web and Android must launch together per latest round 3. Launch regions and acquisition remain undecided. Stripe is a web-billing candidate, not an adopted service.
+- Budget and constraints: monthly budget and maintenance tolerance unanswered. Preserve the current Verse experience and catalogue/dashboard; Daniel likes most of the existing build and wants few visible changes. Preserve existing data. Do not assume paid services, accounts, analytics or external AI processing. Scope/architecture agreement precedes major implementation.
+- Creative journeys: immediate words/melody capture then return later; backing-first freestyle is another entry. Latest round 3 accepts separate voice/backing file exports plus a mix and text, superseding the mixed-only local draft. Preserve the current writing/catalogue experience. Sharing is private through exported files; no collaborative/public-link scope.
+- Devices: iPhone/iOS, Mac and AirPods/Bluetooth/other wireless headphones. Exact phone/OS unknown. Audio routing on a real iPhone is unverified.
+
+Interview evidence: Daniel's first-round answers in this session, 2026-11-06. This file supersedes the initial personal-only hypothesis with an explicit commercial destination. It does not commit to a subscription or declare a release specification.
+
+Round 2, 2026-11-07: offline capture required; no locked-phone recording, leaning against recording across app switches; stop/save is reasonable. No restorable lyric-history feature. Daniel delegates the v1 backup/sync recommendation, prefers a very cheap annual price and little to no maintenance. No exact price, backend, recurring-cost ceiling or service/account authorisation is established. Round 3 is now answered above; concrete private-validation/public-paid scope and the shared-web/Capacitor architecture are proposed in `spec/verse-release-proposal.md` and ADR 0001, awaiting the requested checkpoint.
