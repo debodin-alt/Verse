@@ -71,3 +71,13 @@ Existing hosted user content/storage was not accessed or altered. All test edits
 Sites `get_site` reconfirms owner-only custom access, no external visitors and latest saved version 2. Version history gives source SHA `b9222c5f4cd078f48dd74b7c0117943e9110838f`, distinct from GitHub. Different commit provenance does not establish different asset bytes; byte parity and current deployed-artifact identity remain unverified. No access/deployment change was made.
 
 Recommendation: improve incrementally, starting with data integrity and reliable capture/save/reopen. If Daniel selects mixed-only initial scope, that removes the immediate justification for a stem schema or recording-engine rewrite. Preserve the UI/sample and decide capture capabilities from requirements and real-device evidence. Resolve the concurrent-session scope conflict before this session changes the approved specification or begins implementation.
+
+## Follow-up — 2026-11-08
+
+Daniel confirms that getting an idea down and saving it must work offline; other offline features are not automatically required. Stopping and saving a recording when locking the phone or switching apps is acceptable. Exact phone/iOS/headphone details are deferred to device testing and do not block these product decisions. These answers do not settle the separate-track/platform scope conflict above.
+
+On “now what”, checked the already prepared data-integrity increment rather than duplicating implementation. PR #2 remains open at `6a507fddbe22d199aec16a1f92b1f1c69efd8944`. Read its increment criteria, changed persistence/deletion/restore/save-feedback paths, tests, migration/rollback notes and recorded browser evidence. Reran `npm run check`: pass, reporting 19 core checks and recording simulations. `git diff --check origin/main` passes. GitHub's PR-triggered Check Verse workflow completed successfully (run 42343860768).
+
+The current app hash matches its committed twelve-case browser evidence (`5aaad6fc6e4dc5a0ff982de34ee950b5255b3702fba8f80397f27692d8efda37`). Those browser results were inspected, not rerun by this session today. Physical migration/audio, simultaneous recovery contention and full hostile/large import coverage remain release gaps. The additive v3 upgrade retains creative records, but rollback needs v3-compatible app code; never clear/downgrade storage to reopen old code.
+
+No new merge blocker identified for this focused increment. Recommend Daniel approve PR #2's merge, then proceed with offline capture/save/reopen and foreground stop/save validation in small Orca increments. The data-protection step is common to either recording/platform scope. No merge, deployment or paid service activation was performed by this session.
