@@ -1,0 +1,203 @@
+{
+  "baseline": "data-integrity-regressions",
+  "appSha256": "5aaad6fc6e4dc5a0ff982de34ee950b5255b3702fba8f80397f27692d8efda37",
+  "browser": "156.0.8078.80",
+  "syntheticAudio": true,
+  "checks": [
+    {
+      "name": "Capture text, save and reopen",
+      "status": "pass",
+      "evidence": "Exact title/lyric persisted in real IndexedDB across reload."
+    },
+    {
+      "name": "Native MediaRecorder with synthetic microphone, running loop, save and replay after reopen",
+      "status": "pass",
+      "evidence": {
+        "bytes": 36620,
+        "sha256": "8b20e4aecebfb9acb174fb13a59f984c20603c974376fbb7145ed688f3732668",
+        "limit": "Synthetic Chromium microphone; no physical device/audio routing or audible quality evidence."
+      }
+    },
+    {
+      "name": "Full downloaded backup restores real recording bytes additively",
+      "status": "pass",
+      "evidence": "Two imported copies plus existing sample; original dates and audio SHA-256 preserved through restore/reload."
+    },
+    {
+      "name": "Additive v1→v3 database migration preserves legacy text/audio",
+      "status": "pass",
+      "evidence": "Real IndexedDB upgrade preserved fixture identity/text/bytes and added sessions; fixture audio is arbitrary bytes, not playable media."
+    },
+    {
+      "name": "Denied microphone leaves a usable notebook",
+      "status": "pass",
+      "evidence": "Chromium context without a microphone grant rejected capture; editing and saving remained available."
+    },
+    {
+      "name": "Version-2 library keeps original fields and audio through upgrade",
+      "status": "pass",
+      "evidence": "Version-2 fixture retains identity, dates, settings, take identity and audio through upgrade, edit and reload."
+    },
+    {
+      "name": "Final-save storage fault retains audio and recovery checkpoint",
+      "status": "pass",
+      "evidence": "Injected persistence failure, not an actual full disk; audio stayed in memory and journal recovered exactly once on reload."
+    },
+    {
+      "name": "Stale tab cannot overwrite newer lyrics or recordings",
+      "status": "pass",
+      "evidence": "Stale save rejected; newer lyrics/audio survive; a downloaded backup preserves the stale tab’s unsaved tag."
+    },
+    {
+      "name": "Queued edits in one tab remain saveable",
+      "status": "pass",
+      "evidence": "Own queued saves advance safely without a false cross-tab conflict."
+    },
+    {
+      "name": "An older save cannot confirm newer unsaved text",
+      "status": "pass",
+      "evidence": "Completion of an earlier write does not label later unsaved edits as saved."
+    },
+    {
+      "name": "A stale tab cannot recreate a deleted idea",
+      "status": "pass",
+      "evidence": "Deletion remains durable; stale text is available for explicit export without silently resurrecting the idea."
+    },
+    {
+      "name": "Journal for a deleted idea recovers as an idempotent new copy",
+      "status": "pass",
+      "evidence": "Original ID stays deleted; available journal bytes recover to one new idea and do not duplicate on reopen."
+    }
+  ],
+  "observations": [],
+  "uncaughtPageErrors": [],
+  "consoleMessages": [
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_FAILED"
+    }
+  ],
+  "blockedOptionalRequests": [
+    "fonts.googleapis.com",
+    "fonts.googleapis.com",
+    "fonts.googleapis.com",
+    "fonts.googleapis.com",
+    "fonts.googleapis.com",
+    "fonts.googleapis.com",
+    "fonts.googleapis.com",
+    "fonts.googleapis.com",
+    "fonts.googleapis.com",
+    "fonts.googleapis.com",
+    "fonts.googleapis.com",
+    "fonts.googleapis.com",
+    "fonts.googleapis.com",
+    "fonts.googleapis.com",
+    "fonts.googleapis.com",
+    "fonts.googleapis.com",
+    "fonts.googleapis.com",
+    "fonts.googleapis.com",
+    "fonts.googleapis.com",
+    "fonts.googleapis.com",
+    "fonts.googleapis.com",
+    "fonts.googleapis.com",
+    "fonts.googleapis.com",
+    "fonts.googleapis.com",
+    "fonts.googleapis.com"
+  ]
+}

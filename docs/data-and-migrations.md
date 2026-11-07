@@ -1,6 +1,8 @@
 # Data, persistence and migration proposal
 
-Status: draft; no schema changed. Existing `verse-notebook` IndexedDB v2 has `ideas` with embedded take Blobs and `sessions` with captured chunks. Backup envelope version 1 is independent of DB version.
+Status: logical stem/sync model remains proposed for future increments under the accepted scope. This data-integrity increment upgrades `verse-notebook` v1/v2 to v3 by adding `revisions` (ID, revision and deletion marker), keeping `ideas` with embedded take Blobs and `sessions` with captured chunks intact. Legacy ideas start at revision zero when no marker exists; subsequent guarded writes advance revisions atomically. Backup envelope version 1 is independent of DB version and does not export internal revision markers.
+
+Cross-tab revision comparison and the corresponding idea mutation share one transaction. This tab's own operations are queued and known revisions advance only after commit. A conflicting tab preserves its in-memory copy for export and cannot silently overwrite newer content or resurrect a deletion. Rollback requires v3-compatible code; never clear/downgrade the database to run v2 code. Fixture evidence is in `docs/validation/data-integrity-browser.json`.
 
 ## Logical model and later extensions
 

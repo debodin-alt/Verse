@@ -25,7 +25,11 @@ The app requests the browser's play-and-record audio session before mic capture,
 
 ## Data safety
 
-Existing `verse-notebook` IndexedDB data is preserved by an additive schema upgrade from version 1 to 2. Each recording writes a recovery checkpoint when MediaRecorder supplies a chunk (requested every two seconds; timing is browser-controlled). A complete take is saved before its checkpoint is removed. Reopening recovers any available interrupted audio once; incomplete media may not play in every browser. Closing/force-quitting before the first chunk is emitted can still lose that audio. No background-recording guarantee is made.
+Existing `verse-notebook` IndexedDB data is preserved by an additive upgrade from versions 1/2 to version 3. Version 3 adds a separate revision/deletion-marker store; existing idea and recording records are retained. If another old Verse tab blocks the upgrade, save/export its work and close it, then let the updated tab finish opening. Do not clear storage. Older version-2 app code cannot open a database already upgraded to version 3; recover with compatible code rather than downgrading/deleting the database.
+
+Each recording writes a recovery checkpoint when MediaRecorder supplies a chunk (requested every two seconds; timing is browser-controlled). A complete take is saved before its checkpoint is removed. Reopening recovers available interrupted audio once; incomplete media may not play in every browser. Closing/force-quitting before the first chunk is emitted can still lose that audio. No background-recording guarantee is made.
+
+If an idea changed in another tab, its stale save is rejected instead of replacing newer work. **Export your copy before reloading** the stale tab; its unsaved words/audio remain in memory, and Backup & restore can export them. Deletion markers prevent an old tab silently recreating a deleted idea. Saves within a single tab remain ordered. Backup imports create new copies while retaining original creation/modification dates and recording bytes.
 
 Full backups include text, settings and recording bytes. Import is additive. Clearing browser data deletes local work. Use **Backup & restore** regularly. Safari and the Home Screen app may have separate storage, so export/import when switching.
 
@@ -51,10 +55,12 @@ This is a browser app, not an installed native iPhone app. Data remains in the b
 
 `test-core.cjs` checks chord intervals and backup validation. `tests/recording.cjs` simulates the recording lifecycle to verify continuing a running loop, starting backing when stopped, preserving application gain, completion before re-enabling capture, saving before checkpoint cleanup, and keeping failed saves downloadable. These are regression tests, not physical microphone or Safari routing tests.
 
+`scripts/review-browser.mjs` additionally uses an existing Playwright installation and Chrome with disposable profiles and a synthetic microphone. Pass the module path and an output directory as its arguments. It verifies version-1/2 fixtures, timestamp/audio backup preservation, stale-write and deletion protection, queued saves, truthful save status and failed-save recovery using real IndexedDB. It installs no dependencies, blocks optional external fonts and writes synthetic backups only to the chosen output directory. This optional probe is not currently part of CI and does not verify a real iPhone/Android audio route.
+
 ## Next improvements
 
 1. Test microphone and keyboard dictation on a physical iPhone; tune capture latency.
 2. Add authenticated durable cloud backup/sync and conflict handling.
 3. Add named chord variations per idea and section-specific progressions.
 4. Add MIDI export, tap tempo and richer drum sounds.
-5. Consider a native wrapper only if reliable background capture becomes essential.
+5. Package the shared app for iOS and Android under the accepted all-platform plan; native audio capabilities depend on device proof. See `spec/verse-release-proposal.md` for the complete release scope and remaining gates.
