@@ -10,6 +10,7 @@ Updated: 2026-11-07 by lead. Canonical current facts on main; discovery artifact
 - Founder board: 3 FUND IF, average 5.3/10; product focus stronger than evidence of buyer demand/distribution. Conditional qualitative advice, not market validation. Round-1 interview, commercial architecture alternatives and board memos are on the discovery branch.
 - Baseline checks pass. Isolated Chrome verifies text persistence, native MediaRecorder with synthetic mic plus saved/reopened playback, full backup/audio-byte restore, v1→v2 DB fixture preservation, mic denial and injected save-failure recovery. Physical iPhone recording/routing/interruption remains unverified.
 - First implementation fixes target stale-tab overwrites/deletion resurrection, restore dates and premature saved feedback. Branch adds transactional revision/deletion markers in IndexedDB v3 while preserving v1/v2 creative records. Not merged or deployed; review/test evidence belongs to that branch.
+- Implementation PR https://github.com/debodin-alt/Verse/pull/2 is open for merge review. Local checks pass (19 core assertions plus recording simulations); final isolated Chrome probe passes 12 real-IndexedDB/synthetic-audio cases, including new audio preservation, stale-copy download and deleted-parent recovery. No uncaught page errors; expected blocked-font resource errors recorded. Browser probe is optional and not yet part of CI. Physical device and native release gates remain pending.
 - Accepted scope/file trail is on main: private all-platform validation first, managed backup/sync/customer billing before public paid launch. Shared current web UI plus Capacitor iOS/Android packaging approved; no new services or paid spend activated.
 - Preview for data-integrity increment: http://localhost:5191 on this Mac, served in its Orca worktree. It has separate local test data; hosted app/data unchanged.
 - Native setup evidence: macOS 13.7.8, Command Line Tools selected; xcodebuild requires full Xcode and simctl is unavailable. No Java runtime/adb/Gradle/Android Studio/SDK found through PATH and checked standard paths. No native build/device/store validation claimed; current Capacitor iOS toolchain needs a suitable newer Mac/build host. No system/dependency/service changes made.
@@ -36,7 +37,7 @@ Updated: 2026-11-07 by lead. Canonical current facts on main; discovery artifact
 - No new paid services, external AI processing, analytics, audience changes or accounts without an explicit decision.
 
 ## Next
-1. Finish/review V-01/V-02 data-integrity branch, publish its source/test evidence/preview in a PR for merge review.
+1. Daniel reviews PR #2 for merge; implementation/source/tests/recovery notes and local preview are ready. Planning approval did not approve this code merge/deployment.
 2. Continue offline/capture/stem/native increments through Orca; establish suitable native build setup alongside shared product work. All three targets gate release.
 3. Research supports annual-price testing, not an established willingness-to-pay range or profit forecast. No cloud/billing activation before provider/cost/account decisions.
 
