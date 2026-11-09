@@ -5,8 +5,9 @@
   "description": "A personal, phone-friendly songwriting notebook",
   "scripts": {
     "dev": "node scripts/serve.cjs",
-    "test": "node test-core.cjs && node tests/recording.cjs",
-    "check": "node --check dist/app.js && npm test"
+    "test": "node test-core.cjs && node tests/recording.cjs && node tests/offline-worker.cjs",
+    "prepare:offline": "node scripts/prepare-offline.cjs",
+    "check": "node --check dist/app.js && node --check dist/offline.js && node --check dist/sw.js && node scripts/prepare-offline.cjs --check && npm test"
   },
   "engines": {"node": ">=20"}
 }
