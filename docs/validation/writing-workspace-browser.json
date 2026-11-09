@@ -1,0 +1,313 @@
+{
+  "provider": "Orca isolated browser",
+  "syntheticAudio": true,
+  "appSha256": "cd6c03b0edd2699343a1335f6b9d9c3beee60bf2ce8778166630d3ea27e7e3b8",
+  "workerSha256": "0651f05b81f533052fbc0606f986d54c803cadc26cffc081ee1816be0d341ede",
+  "checks": [
+    {
+      "name": "Desktop Play exposes one lyrics editor beside backing",
+      "status": "pass",
+      "evidence": {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "write": {
+          "x": 312,
+          "y": 434.5,
+          "right": 856.96875,
+          "bottom": 1197.6953125,
+          "width": 544.96875,
+          "height": 763.1953125
+        },
+        "play": {
+          "x": 888.96875,
+          "y": 434.5,
+          "right": 1408,
+          "bottom": 1359.6953125,
+          "width": 519.03125,
+          "height": 925.1953125
+        },
+        "lyrics": {
+          "x": 312,
+          "y": 581.5,
+          "right": 831.96875,
+          "bottom": 1043.5,
+          "width": 519.96875,
+          "height": 462
+        },
+        "record": {
+          "x": 1086.1796875,
+          "y": 1011,
+          "right": 1253,
+          "bottom": 1059,
+          "width": 166.8203125,
+          "height": 48
+        },
+        "editors": 1,
+        "tab": "play"
+      }
+    },
+    {
+      "name": "Typing and switching views with a pending save preserve loop and words",
+      "status": "pass",
+      "evidence": "Real AudioContext/scheduler keep their identities; same editor value survives tab changes during a held persistence write, then commits."
+    },
+    {
+      "name": "Responsive workspace and visible keyboard focus",
+      "status": "pass",
+      "evidence": [
+        {
+          "width": 320,
+          "scrollWidth": 320,
+          "write": {
+            "x": 18,
+            "y": 409.5,
+            "right": 302,
+            "bottom": 1061.890625,
+            "width": 284,
+            "height": 652.390625
+          },
+          "play": {
+            "x": 18,
+            "y": 1093.890625,
+            "right": 302,
+            "bottom": 2228.78125,
+            "width": 284,
+            "height": 1134.890625
+          },
+          "lyrics": {
+            "x": 18,
+            "y": 582.5,
+            "right": 302,
+            "bottom": 912.5,
+            "width": 284,
+            "height": 330
+          },
+          "record": {
+            "x": 23,
+            "y": 771,
+            "right": 297,
+            "bottom": 819,
+            "width": 274,
+            "height": 48
+          },
+          "editors": 1,
+          "tab": "play"
+        },
+        {
+          "width": 390,
+          "scrollWidth": 390,
+          "write": {
+            "x": 18,
+            "y": 365.5,
+            "right": 372,
+            "bottom": 975.890625,
+            "width": 354,
+            "height": 610.390625
+          },
+          "play": {
+            "x": 18,
+            "y": 1007.890625,
+            "right": 372,
+            "bottom": 2060.78125,
+            "width": 354,
+            "height": 1052.890625
+          },
+          "lyrics": {
+            "x": 18,
+            "y": 496.5,
+            "right": 372,
+            "bottom": 826.5,
+            "width": 354,
+            "height": 330
+          },
+          "record": {
+            "x": 140.7421875,
+            "y": 771,
+            "right": 367,
+            "bottom": 819,
+            "width": 226.2578125,
+            "height": 48
+          },
+          "editors": 1,
+          "tab": "play"
+        },
+        {
+          "width": 768,
+          "scrollWidth": 768,
+          "write": {
+            "x": 275,
+            "y": 422.5,
+            "right": 733,
+            "bottom": 1027.6953125,
+            "width": 458,
+            "height": 605.1953125
+          },
+          "play": {
+            "x": 275,
+            "y": 1059.6953125,
+            "right": 733,
+            "bottom": 2075.0859375,
+            "width": 458,
+            "height": 1015.390625
+          },
+          "lyrics": {
+            "x": 275,
+            "y": 553.5,
+            "right": 733,
+            "bottom": 903.5,
+            "width": 458,
+            "height": 350
+          },
+          "record": {
+            "x": 389.7421875,
+            "y": 1011,
+            "right": 736,
+            "bottom": 1059,
+            "width": 346.2578125,
+            "height": 48
+          },
+          "editors": 1,
+          "tab": "play"
+        },
+        {
+          "width": 1024,
+          "scrollWidth": 1024,
+          "write": {
+            "x": 344,
+            "y": 443.5,
+            "right": 960,
+            "bottom": 1048.6953125,
+            "width": 616,
+            "height": 605.1953125
+          },
+          "play": {
+            "x": 344,
+            "y": 1080.6953125,
+            "right": 960,
+            "bottom": 2046.890625,
+            "width": 616,
+            "height": 966.1953125
+          },
+          "lyrics": {
+            "x": 344,
+            "y": 574.5,
+            "right": 960,
+            "bottom": 924.5,
+            "width": 616,
+            "height": 350
+          },
+          "record": {
+            "x": 825.1796875,
+            "y": 1011,
+            "right": 992,
+            "bottom": 1059,
+            "width": 166.8203125,
+            "height": 48
+          },
+          "editors": 1,
+          "tab": "play"
+        },
+        {
+          "width": 1440,
+          "scrollWidth": 1440,
+          "write": {
+            "x": 312,
+            "y": 434.5,
+            "right": 856.96875,
+            "bottom": 1197.6953125,
+            "width": 544.96875,
+            "height": 763.1953125
+          },
+          "play": {
+            "x": 888.96875,
+            "y": 434.5,
+            "right": 1408,
+            "bottom": 1359.6953125,
+            "width": 519.03125,
+            "height": 925.1953125
+          },
+          "lyrics": {
+            "x": 312,
+            "y": 581.5,
+            "right": 831.96875,
+            "bottom": 1043.5,
+            "width": 519.96875,
+            "height": 462
+          },
+          "record": {
+            "x": 1086.1796875,
+            "y": 1011,
+            "right": 1253,
+            "bottom": 1059,
+            "width": 166.8203125,
+            "height": 48
+          },
+          "editors": 1,
+          "tab": "play"
+        }
+      ]
+    },
+    {
+      "name": "Offline lyric edits during native synthetic capture preserve words and take",
+      "status": "pass",
+      "evidence": {
+        "take": {
+          "id": "523f0505-23bb-4f89-bdaf-01e97c174fdb",
+          "bytes": 96674,
+          "hash": "a1e6c6632390acbe4b0df8bf394f110a3605f143ee14d7cf7da4f8fdcafdbc60"
+        },
+        "limit": "Injected Web Audio source, native MediaRecorder/IDB/decoding. No physical microphone/permission/routing evidence."
+      }
+    },
+    {
+      "name": "Text and full-backup payloads contain canonical lyrics and take bytes",
+      "status": "pass",
+      "evidence": "Payload captured at the unchanged download boundary: one exact lyric value and original recorded bytes; no new chord markup. File-save UI not retested here."
+    },
+    {
+      "name": "Combined view retains stale-tab protection",
+      "status": "pass",
+      "evidence": "New lyrics/take survive a stale tag save from another tab; editor remains single and consistent after reopen."
+    }
+  ],
+  "consoles": [
+    {
+      "entries": [],
+      "truncated": false
+    },
+    {
+      "entries": [],
+      "truncated": false
+    },
+    {
+      "entries": [],
+      "truncated": false
+    },
+    {
+      "entries": [],
+      "truncated": false
+    }
+  ],
+  "screenshots": [
+    {
+      "format": "png",
+      "path": "/var/folders/ts/kg0pvw3s6yxd6y_rnvcghdv40000gp/T/orca-browser-screenshots/c26798ea-f91e-4520-9a07-bd29dcf56c75-screenshot.png",
+      "expiresAt": "2026-11-10T22:09:42.329Z"
+    },
+    {
+      "format": "png",
+      "path": "/var/folders/ts/kg0pvw3s6yxd6y_rnvcghdv40000gp/T/orca-browser-screenshots/9c0cc94c-e99c-48cf-a4cd-112bfd88306d-screenshot.png",
+      "expiresAt": "2026-11-10T22:10:09.705Z"
+    }
+  ],
+  "profile": "539cea68-740c-458a-b4fa-bc01bbf7ff2e",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.7871.250 Safari/537.36",
+  "lastAction": {
+    "name": "Play",
+    "command": "click",
+    "ref": "e17",
+    "role": "tab",
+    "matchedName": "02 \u00a0 Play",
+    "activation": "focus + native Enter"
+  }
+}

@@ -24,7 +24,7 @@ const evaluate=async expression=>{
 const wait=condition=>evaluate(`(async()=>{const end=Date.now()+20000;while(Date.now()<end){if(await (${condition}))return true;await new Promise(r=>setTimeout(r,80));}throw new Error(${JSON.stringify('Timed out: '+condition)});})()`);
 const control=async(name,command,value)=>{
   const snapshot=await call('snapshot','--page',page);
-  const entry=Object.entries(snapshot.refs).find(([,v])=>v.name.replace(/\s+/g,' ').includes(name));
+  const entry=Object.entries(snapshot.refs).find(([,v])=>v.name.replace(/\s+/g,' ').includes(name)&&(!['Words','Play','Takes'].includes(name)||v.role==='tab')&&(command!=='fill'||v.role==='textbox'));
   assert.ok(entry,'Control missing: '+name);
   return call(command,'--page',page,'--element','@'+entry[0],...(value===undefined?[]:['--value',value]));
 };
@@ -72,7 +72,7 @@ try{
   await check('Close and reopen offline; capture/save/reopen exact words',async()=>{
     await close();const before=responses;await open(true);
     await control('New idea','click');await control('Idea title','fill','Offline idea');
-    await control('A line, a verse','fill','Words saved without internet');await saved();
+    await control('Lyrics','fill','Words saved without internet');await saved();
     await close();await open(true);assert.equal(await evaluate('active.lyrics'),'Words saved without internet');
     assert.equal(responses,before,'Unavailable server must deliver no app responses');return 'All app pages closed and reopened with page offline and server connections refused; exact new words persist with no server responses.';
   });
@@ -119,7 +119,7 @@ try{
     profile=(await call('tab','profile','create','--label','Verse failed offline setup test','--scope','isolated')).profile.id;
     results.setupProfile=profile;revision='failed-first-setup';fault='login';await open(false);
     await wait('document.querySelector("#offlineState").textContent.includes("unavailable")');
-    await control('A line, a verse','fill','Notebook usable while offline setup fails');await saved();
+    await control('Lyrics','fill','Notebook usable while offline setup fails');await saved();
     assert.equal((await evaluate('caches.keys()')).filter(n=>n.startsWith('verse-shell:')).length,0);
     assert.equal(await evaluate('active.lyrics'),'Notebook usable while offline setup fails');
     return 'Fresh profile rejects a login/mismatched asset, reports offline setup unavailable, and still saves text in IndexedDB.';
