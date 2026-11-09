@@ -17,7 +17,9 @@ Package the tested source and record its commit. Deploy only after agreement usi
 
 Hold coordinated launch until all three targets satisfy the same release definition. Mac uses web. Internal previews do not count as a staggered product launch. A public paid launch waits for both store approvals and the commercial gates; store review completion dates cannot be guaranteed. No public sharing links/collaboration are in scope; sharing is through exported files.
 
-For offline support, cache only intended static app assets, never login/error responses or customer records. Stage new assets separately and activate when recording and saves are idle. Do not force-reload during capture. Maintain a working offline shell and test it with the current data version before removing old caches. Exact deployment/cache implementation awaits scope and hosting decisions.
+Offline shell implementation: run `npm run prepare:offline` after static edits, then `npm run check`; the latter rejects an out-of-date worker. Publish the entire `dist/` as one coherent artifact, including `sw.js` and `offline.js`. Serve the worker as JavaScript with revalidation/no-cache and the same-origin intended scope; verify the host permits service workers and does not transform pinned assets. Hash validation rejects login pages, redirects or mixed/transformed files instead of caching them. The existing Site's actual behaviour must be checked in a private preview before deployment.
+
+Only listed static files are cached. Updates wait for all old app pages to close; nothing calls skipWaiting or reloads during capture. Ask the tester to finish/save, close all Verse pages and reopen for a pending update. A failed install leaves the active shell intact; a successful activation removes only older shell caches for that scope, never IndexedDB or unrelated caches. Record the shell worker hash alongside source and DB version. Local offline access is not an authenticated server request and is available within the same device/browser profile. See [ADR 0002](adr/0002-offline-static-shell.md).
 
 ## Rollback
 

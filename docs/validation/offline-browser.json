@@ -1,0 +1,97 @@
+{
+  "provider": "Orca isolated embedded browser",
+  "syntheticAudio": true,
+  "checks": [
+    {
+      "name": "Complete pinned shell prepared online",
+      "status": "pass",
+      "evidence": "Exactly the eight pinned static files are cached."
+    },
+    {
+      "name": "Close and reopen offline; capture/save/reopen exact words",
+      "status": "pass",
+      "evidence": "All app pages closed and reopened with page offline and server connections refused; exact new words persist with no server responses."
+    },
+    {
+      "name": "Offline native recordings with injected synthetic audio save/reopen/play",
+      "status": "pass",
+      "evidence": {
+        "takes": [
+          {
+            "id": "c6dc00ee-dbe2-4b47-8c32-023698ba6f76",
+            "bytes": 50811,
+            "sha256": "24454861f79906ef4e2b7cfe423c4aec355f0e838ad702382ea759d0650188ef"
+          },
+          {
+            "id": "535675dc-e793-41df-a700-657be701ceeb",
+            "bytes": 59514,
+            "sha256": "5853e325eb1739f2e4f80867f1fc748ab3a0897fd63a40cc2f1a9a758e1f11ca"
+          }
+        ],
+        "limit": "Injected Web Audio signal replaces getUserMedia; native recorder/cache/IDB/playback exercised, no microphone permissions or physical routing evidence."
+      }
+    },
+    {
+      "name": "Complete update waits with open app, then preserves data on activation",
+      "status": "pass",
+      "evidence": "New shell waits during native synthetic capture without interrupting it; after saving and closing all app pages, new title and unchanged text/audio confirm safe activation."
+    },
+    {
+      "name": "Reject missing update and retain prior offline release",
+      "status": "pass",
+      "evidence": "Candidate rejected; previous complete app and words still reopen offline."
+    },
+    {
+      "name": "Reject redirect update and retain prior offline release",
+      "status": "pass",
+      "evidence": "Candidate rejected; previous complete app and words still reopen offline."
+    },
+    {
+      "name": "Reject login update and retain prior offline release",
+      "status": "pass",
+      "evidence": "Candidate rejected; previous complete app and words still reopen offline."
+    }
+  ],
+  "consoles": [
+    {
+      "entries": [],
+      "truncated": false
+    },
+    {
+      "entries": [],
+      "truncated": false
+    },
+    {
+      "entries": [],
+      "truncated": false
+    },
+    {
+      "entries": [],
+      "truncated": false
+    },
+    {
+      "entries": [],
+      "truncated": false
+    },
+    {
+      "entries": [],
+      "truncated": false
+    },
+    {
+      "entries": [],
+      "truncated": false
+    },
+    {
+      "entries": [],
+      "truncated": false
+    },
+    {
+      "entries": [],
+      "truncated": false
+    }
+  ],
+  "appSha256": "5aaad6fc6e4dc5a0ff982de34ee950b5255b3702fba8f80397f27692d8efda37",
+  "workerSha256": "9f8829462bd7a402508818a94cc4d026cad535e24130cfc0a388dde2b2e60b3c",
+  "profile": "bdf6370c-c51f-4955-9545-0ffd8b804ec9",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.7871.250 Safari/537.36"
+}

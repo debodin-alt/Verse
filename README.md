@@ -4,11 +4,12 @@ A phone-friendly songwriting notebook. Capture lyrics and voice ideas, develop t
 
 ## Run
 
-Requires Node 20 or later for development and tests. No package installation or build step is needed.
+Requires Node 20 or later for development and tests. No package installation is needed. The checked-in offline worker is generated from the app files; regenerate it whenever those files change.
 
 ```sh
-npm run dev    # http://localhost:5173
-npm run check  # syntax, core and recording regression checks
+npm run dev              # http://localhost:5173
+npm run prepare:offline  # after editing static app files or the worker template
+npm run check            # syntax, pinned shell, core/recording/worker regressions
 ```
 
 Deploy the `dist/` directory to any HTTPS static host. Microphone recording needs HTTPS (localhost also qualifies) and browser permission. The current private ChatGPT Site provides the access gate; a different host must supply its own access restrictions if required.
@@ -35,7 +36,11 @@ Full backups include text, settings and recording bytes. Import is additive. Cle
 
 ## Phone use
 
-Open in Safari and choose **Share → Add to Home Screen**. A manifest and app icons provide a standalone window. This release does not cache the private app for offline startup or sync between devices.
+Open in Safari and choose **Share → Add to Home Screen**. After an online load, wait for **Ready for offline capture** before relying on offline reopening. Use the same address and browser/Home Screen context: browser profiles and origins have separate data.
+
+The app keeps a verified copy of its static files for offline typing, local backing, recording, saving and replay. Permission/codec support still applies. First-ever setup, sign-in and some OS/browser dictation need internet. Browser eviction can remove offline files/data; this is not a backup or a sync service. Hosted sign-in/cache behaviour and real iPhone/Home Screen recording still need release validation.
+
+Updates prepare a separate complete copy and wait until all old Verse tabs are closed. Finish your take, wait for its saved confirmation, then close all Verse windows and reopen to use a pending update. Never clear storage to update. A failed download/redirect/mismatched asset leaves the existing offline release in place. The cache contains only app files, not songs, recordings, backups, auth pages or API responses. Local offline access is available to someone using the same device/browser profile; hosted sign-in does not encrypt local work.
 
 ## Included
 
@@ -49,13 +54,15 @@ Open in Safari and choose **Share → Add to Home Screen**. A manifest and app i
 
 ## Limits
 
-This is a browser app, not an installed native iPhone app. Data remains in the browser on one device; no automatic cloud sync. Export backups regularly. Microphone and speech recognition support varies by browser. The app stops recording when it goes into the background to avoid claiming reliable background recording. Use headphones for a clean voice plus backing recording. Audio is a sketch synthesizer, not sampled acoustic instruments. No multitrack editing, tab editor, AI lyric generation, large rhyme dictionary, MIDI export, service-worker offline installation, or automatic transcription. Google Fonts is optional; system font fallbacks are provided.
+This is a browser app, not an installed native iPhone app. Data remains in the browser on one device; no automatic cloud sync. Export backups regularly. Microphone and speech recognition support varies by browser. The app stops recording when it goes into the background to avoid claiming reliable background recording. Use headphones for a clean voice plus backing recording. Audio is a sketch synthesizer, not sampled acoustic instruments. No multitrack editing, tab editor, AI lyric generation, large rhyme dictionary, MIDI export or automatic transcription. Google Fonts is optional; system font fallbacks are provided.
 
 ## Validation
 
 `test-core.cjs` checks chord intervals and backup validation. `tests/recording.cjs` simulates the recording lifecycle to verify continuing a running loop, starting backing when stopped, preserving application gain, completion before re-enabling capture, saving before checkpoint cleanup, and keeping failed saves downloadable. These are regression tests, not physical microphone or Safari routing tests.
 
 `scripts/review-browser.mjs` additionally uses an existing Playwright installation and Chrome with disposable profiles and a synthetic microphone. Pass the module path and an output directory as its arguments. It verifies version-1/2 fixtures, timestamp/audio backup preservation, stale-write and deletion protection, queued saves, truthful save status and failed-save recovery using real IndexedDB. It installs no dependencies, blocks optional external fonts and writes synthetic backups only to the chosen output directory. This optional probe is not currently part of CI and does not verify a real iPhone/Android audio route.
+
+Offline worker boundary/failure tests run in `npm run check`; they are not browser lifecycle proof. The optional `node scripts/review-offline-orca.mjs orca /absolute/result/directory` uses the supported Orca browser in a new isolated profile, actual offline app/data paths and an injected synthetic audio signal. It installs nothing and never uses the real microphone or existing browser profile. Read [the offline ADR](docs/adr/0002-offline-static-shell.md) and [increment criteria](spec/offline-capture-increment.md) for deployment limits and recorded verification.
 
 ## Next improvements
 

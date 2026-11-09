@@ -1,0 +1,21 @@
+{
+  "provider": "Orca isolated embedded browser",
+  "syntheticAudio": true,
+  "checks": [
+    {
+      "name": "Failed first offline preparation stays editable with honest status",
+      "status": "pass",
+      "evidence": "Fresh profile rejects a login/mismatched asset, reports offline setup unavailable, and still saves text in IndexedDB."
+    }
+  ],
+  "consoles": [
+    {
+      "entries": [],
+      "truncated": false
+    }
+  ],
+  "appSha256": "5aaad6fc6e4dc5a0ff982de34ee950b5255b3702fba8f80397f27692d8efda37",
+  "workerSha256": "9f8829462bd7a402508818a94cc4d026cad535e24130cfc0a388dde2b2e60b3c",
+  "profile": "bdf6370c-c51f-4955-9545-0ffd8b804ec9",
+  "setupProfile": "e9b797ae-a7f8-430f-bafe-96e0f7076967"
+}

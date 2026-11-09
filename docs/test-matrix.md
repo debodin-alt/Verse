@@ -2,6 +2,8 @@
 
 Baseline automated checks: `npm run check`. Optional investigation harness: `node scripts/review-browser.mjs /absolute/path/to/playwright/index.mjs /absolute/result/directory`. Playwright/Chrome must already exist; the script installs nothing, serves the checked-out dist on loopback and uses new disposable contexts and a fake microphone. Its results do not establish real device recording quality. Do not point it at hosted user data.
 
+Offline-specific checks: worker failure/request-boundary tests are in ordinary `npm run check`; real browser lifecycle tests use `node scripts/review-offline-orca.mjs orca /absolute/result/directory`. They create an isolated profile, refuse server connections during offline stages and inject a Web Audio source for native MediaRecorder; they do not prove microphone permission/routing or physical-phone behaviour.
+
 | Area | Automated/browser proof required | Physical proof required |
 |---|---|---|
 | Capture/catalogue | new text/poem/fragment, search/star/archive, save/reload, no input loss | iPhone portrait, software keyboard, large text, quick reopen and return to an old idea |
@@ -20,7 +22,7 @@ Baseline automated checks: `npm run check`. Optional investigation harness: `nod
 
 Before testing use a disposable idea and export existing work; do not clear storage. Record phone model, OS, Safari versus Home Screen/native, headphone model/route and app version/commit.
 
-1. **Capture:** write a distinctive line, wait for saved status, close/reopen and locate it. After offline support lands, repeat in airplane mode after a successful online installation.
+1. **Capture:** after one online load, wait for Ready for offline capture; create a disposable idea and wait for saved status. Close Verse, enable airplane mode, reopen the same app/browser, find the idea, add a distinctive line, wait for saved status, close/reopen and confirm the line. Never clear storage. First-ever offline entry and OS dictation are outside this guarantee.
 2. **Voice/backing:** play a default loop, listen to its level, record a 10-second sung/clapped take with normal wireless headphones, stop/save, replay, reopen and replay again. Report level changes, missing beginnings, alignment and distorted audio. Repeat for voice-only and speaker only if that route matters.
 3. **Background:** start a disposable take, wait several seconds, switch apps or lock, then return. Expect stopped capture plus truthful saved/recovered state. Replay the available audio; repeat headphone disconnection. Force-quit tests follow only after the backup drill succeeds.
 4. **Backup:** export the disposable library, restore into a separate safe test context and confirm text, names and playable recordings. Never overwrite the only copy to test recovery.
