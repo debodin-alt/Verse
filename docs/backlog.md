@@ -8,6 +8,7 @@ Status: scope/architecture approved by Daniel on 2026-11-07; acceptance referenc
 | V-02 P0 | Concurrent editing and restore integrity | AC07/08: stale-tab edit cannot lose newer lyrics/takes; preserved creation dates; corrupt batch restores no partial records |
 | V-03 P0 | Foreground capture and interrupted-save states | AC04/05/06: denial/dismissal/disconnect/background/lock settle controls; save confirmation only after commit; available interrupted audio recovered once |
 | V-04 P0 | Offline entry and safe updates | AC02/10: install online, close/reopen offline, capture/save/reopen; cached shell and DB version compatibility; update never interrupts capture |
+| V-11 P0 creative UX | Write lyrics with backing in Step 2 | Daniel's 2026-11-10 feedback; [feature brief](../spec/writing-and-backing-workspace.md), W1–W6: simultaneous desktop lyric/music areas, mobile stacked view, one lyrics value, uninterrupted loop while typing, save/reopen/record/offline preservation. Next product increment; chord annotations remain exploratory |
 | V-05 P0 | Separate voice/backing and mixed replay/export | AC03/04: new take assets/timing/frozen backing; text, mix and stem exports; legacy playback; native capture where proven necessary. No DAW editor |
 | V-06 P1 | Exports and capture UX/accessibility | AC03/07/09: accepted formats; consistent naming, readable controls, mobile keyboard, tab/library focus and VoiceOver verification |
 | V-07 P0 release gate | All-platform proof and deployable private release | AC10/11: iPhone + Android routes + Mac/web, native build/signing readiness, recovery/transfer drill, reproducible previews/artifacts and compatible rollback; coordinated release after all gates |
@@ -16,5 +17,7 @@ Status: scope/architecture approved by Daniel on 2026-11-07; acceptance referenc
 | V-10 P0 commercial | Distribution and support readiness | FC04: platform/region order, store review checks, support owner, maintenance cadence, incident/account/data recovery docs and costs accepted |
 
 Later opportunities: MIDI/DAW project integration, richer instruments, collaboration, public links, performance tools and production editing. Latest scope includes text/mix/stem files and private file sharing; it excludes collaboration/public links. No automated customer-demand or profitability gate passes without real inputs.
+
+New exploration from 2026-11-10: optional chord labels above lyric lines/words in the combined workspace. Prototype interaction/export semantics before committing storage changes. This is separate from the required simultaneous lyric editing/backing workspace.
 
 P0 here means prerequisite for the named release gate, not permission to build ahead of scope agreement. P1 accessibility remains a release requirement; its scheduling priority does not waive AC09.
