@@ -1,5 +1,9 @@
 # Product interview
 
+## Step 2 feedback — 2026-11-10
+
+Daniel explicitly wants to see and edit lyrics while using Step 2 / Play, developing the music/loop and words in one place, especially on a computer. A desktop split view is a suggested arrangement. Keeping lyrics editable with backing is essential to the core creative journey. Pencilling chords above lyrics is an exploratory idea, not yet a committed annotation/storage requirement. Proposed responsive scope and acceptance criteria are in `spec/writing-and-backing-workspace.md`.
+
 ## Round 1 — 2026-11-06
 
 Confirmed by Daniel:
