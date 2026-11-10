@@ -49,7 +49,16 @@ function changed(){if(!active)return;editGeneration++;active.updated=Date.now();
 function renderList(){const query=$('#search').value.trim().toLowerCase();let list=ideas.filter(x=>(filter==='archive'?x.archived:!x.archived)&&(filter!=='star'||x.star)&&[x.title,x.lyrics,x.tags,x.notes].join(' ').toLowerCase().includes(query)).sort((a,b)=>b.updated-a.updated);$('#ideaCount').textContent=ideas.filter(x=>!x.archived).length;$('#ideaList').innerHTML=list.length?list.map(x=>`<button class="idea ${active?.id===x.id?'active':''}" data-id="${x.id}"><span class="idea-title">${x.star?'✧ ':''}${escapeHTML(x.title||'Untitled idea')}</span><span class="idea-preview">${escapeHTML(x.lyrics.trim().split('\n').filter(Boolean).slice(0,2).join(' / ')||'A little room for something new.')}</span><span class="idea-meta">${escapeHTML(x.kind.toUpperCase())} · ${escapeHTML(x.stage)}${x.takes.length?' · '+x.takes.length+' take'+(x.takes.length===1?'':'s'):''}</span></button>`).join(''):'<p class="hint">No ideas here yet.</p>';$$('.idea').forEach(b=>b.onclick=()=>selectIdea(b.dataset.id));}
 function selectIdea(id){if(recording||recordStarting||recordFinalizing){toast('Finish your recording before switching ideas.');return;}stopLoop();stopDictation();if(active)save();active=ideas.find(x=>x.id===id)||null;$('#library').classList.remove('open');renderEditor();renderList();}
 function renderEditor(){$('#workspace').hidden=!active;$('#empty').hidden=!!active;if(!active)return;for(const field of ['title','tags','kind','stage','lyrics','notes','sound','bpm'])$('#'+field).value=active[field];$('#key').value=active.key;$('#drums').checked=active.drums;$('#beatPreset').value=active.beatPreset;$('#star').textContent=active.star?'★':'☆';$('#star').setAttribute('aria-pressed',String(active.star));$('#takeCount').textContent=active.takes.length;wordCount();renderChords();renderBeats();renderTakes();switchTab(tab);}
-function switchTab(t){tab=t;$$('.panel').forEach(p=>p.hidden=p.id!==t);$$('[data-tab]').forEach(b=>{b.classList.toggle('active',b.dataset.tab===t);b.setAttribute('aria-selected',String(b.dataset.tab===t));});}
+function switchTab(t){
+  tab=t;
+  // Keep the same editor and listeners in Words and Play: one value, one save path.
+  const developing=t==='play';
+  $('#creativeWorkspace').hidden=t==='takes';
+  $('#creativeWorkspace').classList.toggle('with-backing',developing);
+  $('#workspace').classList.toggle('developing',developing);
+  $$('.panel').forEach(p=>p.hidden=p.id!==t&&!(developing&&p.id==='write'));
+  $$('[data-tab]').forEach(b=>{b.classList.toggle('active',b.dataset.tab===t);b.setAttribute('aria-selected',String(b.dataset.tab===t));});
+}
 function wordCount(){const words=active?.lyrics.trim().split(/\s+/).filter(Boolean)||[];$('#wordCount').textContent=words.length+' words';}
 function newIdea(){if(recording||recordStarting||recordFinalizing)return toast('Finish your recording first.');const idea=makeIdea();ideas.push(idea);selectIdea(idea.id);switchTab('write');save();$('#title').focus();}
 function chordNotes(name){const match=/^([A-G])(#?)(m|7|maj7|m7)?$/.exec(name);if(!match)return [];const root=notes.indexOf(match[1]+match[2]);const q=match[3]||'';const intervals=q==='m'?[0,3,7]:q==='7'?[0,4,7,10]:q==='maj7'?[0,4,7,11]:q==='m7'?[0,3,7,10]:[0,4,7];return intervals.map(i=>48+root+i);}

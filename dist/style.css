@@ -12,3 +12,26 @@ body{font-size:16px}.hint{font-size:14px}.text-button{font-size:14px;min-height:
 @media(max-width:700px){header{padding:0 14px}header .eyebrow{font-size:10px}#saveState{font-size:11px;max-width:110px;text-align:right}#workspace{padding:18px 18px 225px}.song-title{font-size:42px}.tag-input,.search input{font-size:16px}.tabs{justify-content:space-between;gap:12px}.tabs button{font-size:15px}.writing-tools button{font-size:13px}.writing-tools>span{font-size:12px}#lyrics{font-size:22px;line-height:1.8}.meta select{font-size:13px}.capture-bar{width:calc(100% - 20px);padding:12px;gap:6px 12px}.capture-bar>div{flex-basis:100%;margin:0}.capture-bar small{font-size:12px}.record-backing{font-size:13px}.capture-bar .record-button{font-size:15px}.section-heading .eyebrow{font-size:10px}.section-heading .primary{font-size:14px}.record-loop-card{padding:16px}.label-row{font-size:11px;letter-spacing:.6px}.chord{min-width:62px}.chord small{font-size:10px}.chord .remove{min-height:32px;min-width:32px;font-size:20px}.chord .audition{padding-top:25px}.beat-row{grid-template-columns:repeat(8,1fr);gap:5px;margin:18px 0}.beat-row>span{grid-column:1/-1;font-size:14px;margin-bottom:3px}.step{height:40px}.beat-section summary span{font-size:12px}.loop-foot{font-size:13px}.loop-foot input{width:110px}#toast{bottom:185px}#takeCount{font-size:12px}.scratch summary span{font-size:12px}.take-header{flex-wrap:wrap}.take input{flex-basis:65%}}
 
 .offline-state{font-size:13px;line-height:1.5;color:var(--muted);padding:10px 20px;margin:0;text-align:center}
+
+/* Words and music share one editor and the existing save/recording controls. */
+.creative-workspace>div{min-width:0}
+.lyrics-heading,.workspace-jump{display:none}
+.with-backing .lyrics-heading{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:24px 0 8px}
+.lyrics-heading h2{margin:8px 0}
+.workspace-jump{color:var(--green);font-size:14px;min-height:44px;align-items:center;text-underline-offset:4px}
+.with-backing #play{margin-top:32px;border-top:1px solid var(--line);padding-top:8px;scroll-margin-top:24px}
+.with-backing #lyrics{scroll-margin-top:24px}
+.with-backing .play-settings{grid-template-columns:repeat(3,minmax(0,1fr))}
+.with-backing .play-settings label,.with-backing .play-settings input{min-width:0}
+.with-backing .beat-row{grid-template-columns:repeat(8,minmax(0,1fr));gap:5px;margin:16px 0}
+.with-backing .beat-row>span{grid-column:1/-1;font-size:14px;margin-bottom:4px}
+.with-backing .step{height:40px}
+@media(min-width:1200px){
+  #workspace.developing{max-width:1440px;padding-left:32px;padding-right:32px}
+  .creative-workspace.with-backing{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:32px;align-items:start}
+  .with-backing #write{position:sticky;top:24px;max-height:calc(100dvh - 180px);overflow:auto;border-right:1px solid var(--line);padding:0 24px 16px 0}
+  .with-backing .lyrics-heading,.with-backing #play .section-heading{margin-top:16px}
+  .with-backing #play{margin:0;padding:0;border-top:0}
+  .with-backing #lyrics{height:clamp(320px,42dvh,560px);min-height:320px}
+}
+@media(max-width:1199px){.with-backing .workspace-jump{display:inline-flex}}

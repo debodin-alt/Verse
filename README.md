@@ -16,6 +16,8 @@ Deploy the `dist/` directory to any HTTPS static host. Microphone recording need
 
 ## Record over a loop
 
+Step 2 / **Play** keeps your lyrics editable while you develop the backing. On a wide desktop, lyrics and music controls sit side by side; on smaller screens they stack, with Lyrics/Backing links to move between them. Words and Play use the same editor, autosave and selected idea. Typing or changing views keeps a running loop going. The Words view remains available for focused quick capture. Chord annotations above lyrics are a later exploration.
+
 1. Open Play and choose chords and/or a drum pattern.
 2. Press Play loop to experiment. Press **Record over this loop** when ready. A running loop continues rather than restarting.
 3. Allow microphone access. For iPhone, use **Sound check → Enable mic & check sound** first if opening the microphone changes volume. Set comfortable device volume after permission is granted. Use headphones to avoid recording the backing twice through the microphone.
@@ -63,6 +65,8 @@ This is a browser app, not an installed native iPhone app. Data remains in the b
 `scripts/review-browser.mjs` additionally uses an existing Playwright installation and Chrome with disposable profiles and a synthetic microphone. Pass the module path and an output directory as its arguments. It verifies version-1/2 fixtures, timestamp/audio backup preservation, stale-write and deletion protection, queued saves, truthful save status and failed-save recovery using real IndexedDB. It installs no dependencies, blocks optional external fonts and writes synthetic backups only to the chosen output directory. This optional probe is not currently part of CI and does not verify a real iPhone/Android audio route.
 
 Offline worker boundary/failure tests run in `npm run check`; they are not browser lifecycle proof. The optional `node scripts/review-offline-orca.mjs orca /absolute/result/directory` uses the supported Orca browser in a new isolated profile, actual offline app/data paths and an injected synthetic audio signal. It installs nothing and never uses the real microphone or existing browser profile. Read [the offline ADR](docs/adr/0002-offline-static-shell.md) and [increment criteria](spec/offline-capture-increment.md) for deployment limits and recorded verification.
+
+The combined-writing journeys use `node scripts/review-workspace-orca.mjs orca /absolute/result/directory`. This checks the real responsive UI, keyboard controls, loop continuity, pending saves, synthetic recording, offline reopen, export payloads and stale-tab protection in a disposable profile. It uses native focus/Enter activation because Orca's emulated wide-viewport pointer missed the loop button during investigation. Human microphone/routing, touch/keyboard behaviour on an actual phone and full accessibility certification remain separate checks.
 
 ## Next improvements
 

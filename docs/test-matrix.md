@@ -7,6 +7,7 @@ Offline-specific checks: worker failure/request-boundary tests are in ordinary `
 | Area | Automated/browser proof required | Physical proof required |
 |---|---|---|
 | Capture/catalogue | new text/poem/fragment, search/star/archive, save/reload, no input loss | iPhone portrait, software keyboard, large text, quick reopen and return to an old idea |
+| Write with backing | 1440px side-by-side/320–1024px stacked layout; one shared lyrics editor; type/switch/resize without resetting loop; held save across views; synthetic recording with lyric edits; offline reopen/export/stale-tab preservation | actual phone software keyboard, touch jump links, VoiceOver and stop/save reachability while editing/recording |
 | Offline | first install online, close/reopen offline; text/record/local save/reopen; useful first-time offline state | airplane mode on actual Safari/Home Screen app; device dictation availability disclosed |
 | Persistence | v1/v2 fixtures, exact fields/audio hashes, blocked migration, retries, stale-tab conflicts | existing disposable library survives actual app update; never clear storage |
 | Recording | real MediaRecorder with synthetic source, start/stop/finalisation, preserved loop phase, exact saved bytes and media decode | phone microphone with speaker and actual wireless routes, voice-only and backing; level/latency/clipping/drift judged from recordings |
